@@ -1,0 +1,13 @@
+{
+  "name": "devburger-api",
+  "version": "1.0.0",
+  "description": "DevBurger API.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Samuel Ferreira Inocencio",
+  "url": "https://github.com/SamuelInocencio",
+  "license": "ISC",
+  "description": ""
+}
