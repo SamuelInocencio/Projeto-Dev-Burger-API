@@ -2,14 +2,27 @@
   "name": "devburger-api",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "src/server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "nodemon"
   },
   "author": "Samuel Ferreira Inocencio",
   "url": "https://github.com/SamuelInocencio",
   "license": "ISC",
   "dependencies": {
     "express": "^4.21.2"
-  }
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.20.0",
+    "eslint": "^9.20.1",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-config-prettier": "^10.0.1",
+    "eslint-plugin-import": "^2.31.0",
+    "eslint-plugin-prettier": "^5.2.3",
+    "globals": "^15.15.0",
+    "nodemon": "^3.1.9",
+    "prettier": "^3.5.1",
+    "sucrase": "^3.35.0"
+  },
+  "repository": "https://github.com/SamuelInocencio/Projeto-Dev-Burger-API.git"
 }
