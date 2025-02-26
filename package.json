@@ -10,6 +10,7 @@
   "url": "https://github.com/SamuelInocencio",
   "license": "ISC",
   "dependencies": {
+    "bcrypt": "^5.1.1",
     "express": "^4.21.2",
     "pg": "^8.13.3",
     "pg-hstore": "^2.3.4",
