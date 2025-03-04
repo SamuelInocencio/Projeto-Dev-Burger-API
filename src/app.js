@@ -7,7 +7,6 @@ import './database';
 class App {
   constructor() {
     this.app = express();
-
     this.middlewares();
     this.routes();
   }
