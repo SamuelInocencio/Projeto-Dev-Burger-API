@@ -1,6 +1,5 @@
 import * as Yup from 'yup';
 import Product from '../models/Products';
-import { response } from 'express';
 import Category from '../models/Category';
 
 class ProductController {
@@ -38,7 +37,7 @@ class ProductController {
           as: 'category',
           attributes: ['id', 'name'],
         },
-      ]
+      ],
     });
 
     return response.json(products);
