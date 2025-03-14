@@ -40,12 +40,15 @@ class OrderController {
     });
 
     const formattedProducts = findProducts.map((product) => {
+      const productIndex = products.findIndex((item) => item.id === product.id);
+
       const newProduct = {
         id: product.id,
         name: product.name,
         price: product.price,
         category: product.category.name,
         url: product.url,
+        quantity: products[productIndex].quantity,
       };
       return newProduct;
     });
