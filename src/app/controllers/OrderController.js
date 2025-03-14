@@ -1,5 +1,6 @@
 import * as Yup from 'yup';
 import Order from '../schemas/Order';
+import Product from '../models/Products';
 
 class OrderController {
   async store(request, response) {
@@ -24,12 +25,18 @@ class OrderController {
 
     const productsIds = products.map((product) => product.id);
 
+   const findProducts = await Product.findAll({
+    where: {
+       id: productsIds,
+     },
+   })
+
     const order = {
       user: {
         id: request.userId,
         name: request.userName,
       },
-      products: productsIds,
+      products: findProducts,
     };
 
     return response.status(201).json(order);
