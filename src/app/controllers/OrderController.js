@@ -1,6 +1,7 @@
 import * as Yup from 'yup';
 import Order from '../schemas/Order';
 import Product from '../models/Products';
+import Category from '../models/Category';
 
 class OrderController {
   async store(request, response) {
@@ -25,18 +26,36 @@ class OrderController {
 
     const productsIds = products.map((product) => product.id);
 
-   const findProducts = await Product.findAll({
-    where: {
-       id: productsIds,
-     },
-   })
+    const findProducts = await Product.findAll({
+      where: {
+        id: productsIds,
+      },
+      include: [
+        {
+          model: Category,
+          as: 'category',
+          attributes: ['name'],
+        },
+      ],
+    });
+
+    const formattedProducts = findProducts.map((product) => {
+      const newProduct = {
+        id: product.id,
+        name: product.name,
+        price: product.price,
+        category: product.category.name,
+        url: product.url,
+      };
+      return newProduct;
+    });
 
     const order = {
       user: {
         id: request.userId,
         name: request.userName,
       },
-      products: findProducts,
+      products: formattedProducts,
     };
 
     return response.status(201).json(order);
