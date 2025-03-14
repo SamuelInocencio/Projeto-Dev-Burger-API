@@ -3,12 +3,14 @@ import mongoose from 'mongoose';
 const OrderSchema = new mongoose.Schema(
   {
     user: {
-      type: String,
-      required: true,
-    },
-    name: {
-      type: String,
-      required: true,
+      id: {
+        type: String,
+        required: true,
+      },
+      name: {
+        type: String,
+        required: true,
+      },
     },
     products: [
       {
